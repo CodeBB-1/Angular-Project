@@ -1,0 +1,9 @@
+
+<div class="container details">
+    <img height="200" [src]="detailsPerfume.image" alt="">
+    <hr>
+    <h3>{{detailsPerfume.name}}</h3>
+    <p class="text">{{detailsPerfume.details}}</p>
+    <p class="price">Price: €{{detailsPerfume.price}}</p>
+    <button class="btn btn-danger orderBtn" (click)="addItToOrder()">Order</button>
+</div>

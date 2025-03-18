@@ -1,0 +1,10 @@
+* {
+box-sizing: border-box;
+
+}
+
+.buttons {
+display: flex;
+justify-content: space-between;
+margin: 9px;
+}

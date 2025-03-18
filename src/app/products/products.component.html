@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">        
+        <div *ngFor="let value of ImportdedPerfume; let i = index" >
+          <div class="col my-4 card" >  
+            <img height="200" [src]="value.image" alt="" >
+                <div class="card-body">  
+                        <h3 class="card-title">{{value.name}}</h3>
+                        <p class="card-text" >{{value.description}}</p>
+                        <p>Price: {{value.price | currency: "EUR"}}</p>
+                        <ng-container *ngIf="value.availability; else notAvailable">
+                            <div class="buttons">
+                                <a class="btn btn-primary" routerLink="/details/{{i}}">Details</a>
+                                <button class="btn btn-danger" (click)="addToCart(value)">Order</button>
+                            </div>
+                        </ng-container>
+                        <ng-template #notAvailable>
+                            <b style="font-size: x-large;">not available</b>
+                        </ng-template>
+                        <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

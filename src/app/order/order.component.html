@@ -1,0 +1,30 @@
+    <div class="container shoppigCart">    
+        <h3 class="text-center">10% from the Total : {{totalWithSurcharge | currency: "EUR"}}</h3>
+        <br>
+        <br>
+        <table class="table table-striped table-hover">
+
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th class="headImage">Image</th>
+                    <th>Price</th>
+                </tr>
+            @for (value of perfumeItems; track $index) {
+                <tr style="border-bottom: solid;">
+                    <th>{{$index}}</th>
+                    <td>{{value.name}}</td>
+                    <td><img class="images text-center" height="100" [src]="value.image" alt=""></td>
+                    <td>{{value.price  | currency: "EUR"}}</td>
+                    
+
+                </tr>
+                
+            }
+        </table>
+        <h3 class="text-center normalTotal">Total Price : {{total | currency: "EUR"}}</h3>
+        <p class="text-center fs-2"><code>If your Total is more than  40 EUR, you get 15% discount</code></p>
+
+        
+        <h4 class="text-center rabatt">Total-Price -15% : {{totalWithDiscount | currency: "EUR"}}</h4>
+    </div>
